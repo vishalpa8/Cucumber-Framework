@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.156" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Amazon Home Page Scenario" name="Amazon Shopping Cart" time="0.005">
+<system-out><![CDATA[
+Given I am on Amazon Home Page..............................................passed
+When I click on Cart Link...................................................passed
+Then I navigate to Shopping Cart Page.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
