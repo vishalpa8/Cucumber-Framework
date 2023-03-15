@@ -2,6 +2,9 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -17,7 +20,11 @@ public class CommonSteps {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) {
+        if(scenario.isFailed()){
+            final byte[] scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(scr,"image/png", scenario.getName());
+        }
         driver.quit();
     }
 

@@ -23,7 +23,7 @@ public class AmazonSearch_Steps {
 
     @Then("I validate at least {int} search items present")
     public void i_validate_at_least_search_items_present(Integer item) {
-        String expItem = driver.findElement(By.xpath("//h1/div/div[1]/div/div/span[1]")).getText();
+        String expItem = driver.findElement(By.xpath("//h2/div/div[1]/div/div/span[1]")).getText();
         System.out.println(expItem);
     }
 

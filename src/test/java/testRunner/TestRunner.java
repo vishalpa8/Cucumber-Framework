@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"features"},        // where your features files are located.
         glue = {"steps"},               // same here for Step definitions where that steps are located.
-        plugin = {"pretty","html:Output/Report2.html"},
+        plugin = {"pretty","json:target/json-report/Report2.json"},
 //        plugin = {"pretty","json:Output/Report1.json"}
 //          plugin = {"pretty","junit:Output/Report1"}
         dryRun = false,   // it basically checks those who have not step definitions are still not defined.
