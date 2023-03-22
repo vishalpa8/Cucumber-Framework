@@ -16,14 +16,15 @@ public class AmazonSearch_Steps {
 
 
     @When("I search for {string}")
-    public void i_search_for(String product) {
+    public void i_search_for(String product) throws InterruptedException {
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id = 'twotabsearchtextbox']")).sendKeys(product);
         driver.findElement(By.xpath("//*[@id = 'twotabsearchtextbox']")).sendKeys(Keys.ENTER);
     }
 
     @Then("I validate at least {int} search items present")
     public void i_validate_at_least_search_items_present(Integer item) {
-        String expItem = driver.findElement(By.xpath("//h2/div/div[1]/div/div/span[1]")).getText();
+        String expItem = driver.findElement(By.xpath("//*[contains(text(),'results for')]")).getText();
         System.out.println(expItem);
     }
 
